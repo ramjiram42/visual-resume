@@ -1,30 +1,30 @@
-/* TechnePlus Executive Tech-Portfolio Design System (Light-Executive Style) */
+/* TechnePlus Executive Tech-Portfolio Design System (Vintage Editorial Style) */
 
 :root {
-    /* TECHNEPLUS BRAND PALETTE (LIGHT-EXECUTIVE SYSTEM) */
-    --bg-base: #fffefa; /* Warm Off-white */
-    --bg-card: #ffffff; /* Pure White */
+    /* VINTAGE EDITORIAL PALETTE (WARM CREAM & LETTERPRESS SYSTEM) */
+    --bg-base: #faf6ee; /* Warm Cream Parchment */
+    --bg-card: #ffffff; /* Pure White Cardstock */
     
-    --border-subtle: rgba(19, 38, 27, 0.08); /* Muted Dark Green outline */
-    --border-focus: rgba(192, 0, 0, 0.2);    /* Soft Crimson border highlight */
+    --border-subtle: #d5c7ac; /* Warm Gold/Bronze outline */
+    --border-focus: #a31d1d;  /* Muted Crimson highlight */
     
-    --text-primary: #13261b;    /* Dark Forest Green for Headings and main text */
-    --text-secondary: #4d5752;  /* Muted Slate-Green for Bullet lists and summaries */
-    --text-muted: #8c9690;      /* Greenish Grey for meta tags and dates */
+    --text-primary: #2b261d;    /* Deep Charcoal Coffee for Headings */
+    --text-secondary: #5c5343;  /* Muted Charcoal Sepia for Body text */
+    --text-muted: #8c7e6c;      /* Muted Warm Brown for labels and dates */
     
-    /* Elegant Corporate Accents */
-    --accent-crimson: #c00000;  /* TechnePlus Primary Crimson Logo Color */
-    --accent-red: #fa0000;      /* TechnePlus Bright Red */
-    --accent-green: #00471e;    /* TechnePlus Forest Green */
-    --accent-purple: #340061;   /* TechnePlus Purple Accent */
-    --accent-blue: #0099ff;     /* TechnePlus Vibrant Blue */
+    /* Vintage Accents */
+    --accent-crimson: #a31d1d;  /* Muted Crimson */
+    --accent-burgundy: #800020; /* Deep Burgundy */
+    --accent-gold: #c5a059;     /* Classic Gold */
+    --accent-green: #2d5a27;    /* Classic Forest Green */
+    --accent-blue: #2a52be;     /* Muted Royal Blue */
     
-    --gradient-accent: linear-gradient(135deg, var(--accent-crimson) 0%, var(--accent-red) 100%);
-    --gradient-text: linear-gradient(135deg, var(--text-primary) 50%, var(--accent-green) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent-burgundy) 0%, var(--accent-crimson) 100%);
+    --gradient-text: linear-gradient(135deg, var(--text-primary) 65%, var(--accent-burgundy) 100%);
     
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --transition-smooth: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     --transition-snappy: all 0.2s ease;
 }
 
@@ -43,8 +43,8 @@ html {
 body {
     background-color: var(--bg-base);
     color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.5;
+    font-family: 'Lora', serif; /* Warm editorial serif body font */
+    line-height: 1.6;
     overflow-x: hidden;
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -56,20 +56,20 @@ body {
     top: 0;
     left: 0;
     width: 0%;
-    height: 2.5px;
+    height: 3px;
     background: var(--gradient-accent);
     z-index: 1002;
     transition: width 0.1s ease;
 }
 
-/* Fine Dotted Grid Pattern */
+/* Dotted Drafting Paper Background */
 .grid-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: radial-gradient(rgba(19, 38, 27, 0.04) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(43, 38, 29, 0.05) 1.5px, transparent 1.5px);
     background-size: 24px 24px;
     z-index: -2;
     pointer-events: none;
@@ -81,20 +81,21 @@ body {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(192, 0, 0, 0.035) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.045) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: -1;
-    mix-blend-mode: multiply; /* Blending filter for off-white background */
+    mix-blend-mode: multiply; /* Blends perfectly into cream parchment background */
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 
 /* Typography styles */
 h1, h2, h3, h4 {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Playfair Display', serif; /* Elegant serif headings */
     font-weight: 700;
     color: var(--text-primary);
+    letter-spacing: -0.01em;
 }
 
 p {
@@ -108,16 +109,16 @@ a {
 }
 
 a:hover {
-    color: var(--accent-red);
+    color: var(--accent-burgundy);
 }
 
-/* Reusable Glass Cards */
+/* Reusable Letterpress Paper Cards */
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
     padding: 2.25rem 2rem;
-    box-shadow: 0 10px 30px rgba(19, 38, 27, 0.04);
+    box-shadow: 0 10px 30px rgba(43, 38, 29, 0.04);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: var(--transition-smooth);
@@ -126,7 +127,7 @@ a:hover {
 .card:hover {
     transform: translateY(-4px);
     border-color: var(--border-focus);
-    box-shadow: 0 15px 35px rgba(19, 38, 27, 0.08), 0 0 25px rgba(192, 0, 0, 0.02);
+    box-shadow: 0 15px 35px rgba(43, 38, 29, 0.08), 0 0 25px rgba(212, 175, 55, 0.02);
 }
 
 /* Reusable buttons */
@@ -137,33 +138,35 @@ a:hover {
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius-sm);
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition-smooth);
     border: none;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .btn-primary {
     background: var(--accent-crimson);
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(192, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(163, 29, 29, 0.15);
 }
 
 .btn-primary:hover {
-    background: var(--accent-red);
+    background: var(--accent-burgundy);
     transform: translateY(-2px);
 }
 
 .btn-secondary {
-    background: rgba(19, 38, 27, 0.02);
+    background: rgba(43, 38, 29, 0.02);
     border: 1px solid var(--border-subtle);
     color: var(--text-primary);
 }
 
 .btn-secondary:hover {
-    background: rgba(19, 38, 27, 0.04);
+    background: rgba(43, 38, 29, 0.05);
     border-color: var(--border-focus);
     transform: translateY(-2px);
 }
@@ -179,7 +182,7 @@ a:hover {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 254, 250, 0.85);
+    background: rgba(250, 246, 238, 0.9); /* Warm parchment background */
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
@@ -195,8 +198,8 @@ a:hover {
 }
 
 .nav-brand {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
     font-weight: 800;
     color: var(--text-primary);
     letter-spacing: -0.03em;
@@ -213,9 +216,12 @@ a:hover {
 }
 
 .link-item {
+    font-family: 'Inter', sans-serif;
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     padding: 0.25rem 0;
     position: relative;
 }
@@ -260,11 +266,14 @@ a:hover {
 }
 
 .nav-btn-cta {
-    background: rgba(192, 0, 0, 0.05);
-    border: 1px solid rgba(192, 0, 0, 0.15);
+    font-family: 'Inter', sans-serif;
+    background: rgba(163, 29, 29, 0.05);
+    border: 1px solid rgba(163, 29, 29, 0.15);
     color: var(--accent-crimson);
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     padding: 0.5rem 1rem;
     border-radius: var(--radius-sm);
     transition: var(--transition-smooth);
@@ -296,33 +305,33 @@ a:hover {
 }
 
 .section-tag {
-    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     color: var(--accent-crimson);
     display: inline-block;
     margin-bottom: 0.5rem;
 }
 
 .section-heading {
-    font-size: 2.25rem;
-    letter-spacing: -0.02em;
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
 }
 
 .section-subtext {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
     margin-top: 0.5rem;
 }
 
 .section-decor-line {
-    width: 40px;
-    height: 3.5px;
-    background: var(--accent-crimson);
-    margin-top: 1rem;
-    border-radius: 2px;
+    width: 50px;
+    height: 2px;
+    background: var(--border-subtle);
+    margin-top: 1.25rem;
 }
 
 /* Hero section layout */
@@ -340,16 +349,19 @@ a:hover {
 }
 
 .hero-badge {
+    font-family: 'Inter', sans-serif;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(192, 0, 0, 0.04);
-    border: 1px solid rgba(192, 0, 0, 0.10);
+    background: rgba(163, 29, 29, 0.04);
+    border: 1px solid rgba(163, 29, 29, 0.12);
     color: var(--accent-crimson);
     padding: 0.4rem 0.9rem;
     border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-bottom: 1.5rem;
 }
 
@@ -369,7 +381,7 @@ a:hover {
 }
 
 .hero-headline {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
     line-height: 1.1;
     margin-bottom: 0.75rem;
     color: var(--text-primary);
@@ -383,9 +395,7 @@ a:hover {
 }
 
 .typing-gradient {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent-crimson);
     font-weight: 700;
 }
 
@@ -399,8 +409,8 @@ a:hover {
 }
 
 .hero-intro {
-    font-size: 1.05rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.65;
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
     max-width: 620px;
@@ -421,15 +431,17 @@ a:hover {
 }
 
 .meta-label {
-    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
     color: var(--text-muted);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-bottom: 0.25rem;
 }
 
 .meta-value {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-primary);
 }
@@ -464,7 +476,7 @@ a:hover {
 
 .profile-img-container {
     width: 100%;
-    height: 330px;
+    height: 340px;
     overflow: hidden;
     position: relative;
     border-bottom: 1px solid var(--border-subtle);
@@ -474,7 +486,13 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%; /* Perfect headshot framing */
+    object-position: center 15%;
+    filter: sepia(0.18) contrast(1.02) brightness(0.98) saturate(0.95); /* Classy sepia overlay */
+    transition: var(--transition-smooth);
+}
+
+.profile-card:hover .profile-photo {
+    filter: sepia(0.04) contrast(1.04) brightness(1) saturate(1); /* Smooth hover clear effect */
 }
 
 .profile-card-details {
@@ -482,12 +500,14 @@ a:hover {
 }
 
 .widget-header {
+    font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-subtle);
@@ -510,7 +530,7 @@ a:hover {
 }
 
 .metric-number {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
     color: var(--text-primary);
@@ -518,12 +538,16 @@ a:hover {
 }
 
 .metric-label {
-    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
     color: var(--text-secondary);
 }
 
 .widget-footer-line {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.4;
 }
@@ -562,13 +586,13 @@ a:hover {
 
 .pitch-tab-btn:hover {
     border-color: var(--border-focus);
-    background: rgba(192, 0, 0, 0.02);
+    background: rgba(43, 38, 29, 0.015);
 }
 
 .pitch-tab-btn.active {
     background: #ffffff;
     border-color: var(--accent-crimson);
-    box-shadow: 0 8px 24px rgba(19, 38, 27, 0.03);
+    box-shadow: 0 8px 24px rgba(43, 38, 29, 0.04);
 }
 
 .step-num {
@@ -585,7 +609,7 @@ a:hover {
 
 .step-label {
     font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-secondary);
     transition: var(--transition-snappy);
@@ -643,8 +667,8 @@ a:hover {
     width: 52px;
     height: 52px;
     border-radius: var(--radius-sm);
-    background: rgba(192, 0, 0, 0.05);
-    border: 1px solid rgba(192, 0, 0, 0.15);
+    background: rgba(163, 29, 29, 0.04);
+    border: 1px solid rgba(163, 29, 29, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -658,7 +682,8 @@ a:hover {
 }
 
 .pitch-subtitle-tag {
-    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -706,15 +731,15 @@ a:hover {
     align-items: center;
     gap: 1.25rem;
     padding: 0.75rem 1.25rem;
-    background: rgba(19, 38, 27, 0.015);
+    background: rgba(43, 38, 29, 0.015);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     transition: var(--transition-smooth);
 }
 
 .domain-item:hover {
-    background: rgba(192, 0, 0, 0.01);
-    border-color: rgba(192, 0, 0, 0.1);
+    background: rgba(163, 29, 29, 0.01);
+    border-color: rgba(163, 29, 29, 0.12);
     transform: translateX(6px);
 }
 
@@ -748,8 +773,8 @@ a:hover {
 /* Presenter Talking Notes Tip Box */
 .pitch-talking-box {
     margin-top: auto;
-    background: rgba(192, 0, 0, 0.03);
-    border: 1px solid rgba(192, 0, 0, 0.08);
+    background: rgba(163, 29, 29, 0.02);
+    border: 1px solid rgba(163, 29, 29, 0.08);
     border-radius: var(--radius-sm);
     padding: 1.5rem;
     border-left: 4px solid var(--accent-crimson);
@@ -757,18 +782,20 @@ a:hover {
 }
 
 .talking-title {
+    font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--accent-crimson);
     margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
 }
 
 .talking-quote {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lora', serif;
     font-size: 0.92rem;
     line-height: 1.6;
     color: var(--text-primary);
@@ -786,7 +813,7 @@ a:hover {
 }
 
 .btn-slide-control {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     padding: 0.55rem 1.15rem;
     border-radius: 4px;
 }
@@ -800,13 +827,13 @@ a:hover {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(19, 38, 27, 0.1);
+    background: rgba(43, 38, 29, 0.1);
     cursor: pointer;
     transition: var(--transition-snappy);
 }
 
 .slide-dot:hover {
-    background: rgba(192, 0, 0, 0.3);
+    background: rgba(163, 29, 29, 0.3);
 }
 
 .slide-dot.active {
@@ -856,7 +883,7 @@ a:hover {
 .timeline-indicator.active {
     background: var(--accent-crimson);
     border-color: var(--accent-crimson);
-    box-shadow: 0 0 10px rgba(192, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(163, 29, 29, 0.3);
 }
 
 .timeline-row:hover .timeline-indicator {
@@ -872,11 +899,12 @@ a:hover {
 }
 
 .role-date {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--accent-crimson);
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-bottom: 0.25rem;
     display: inline-block;
 }
@@ -945,7 +973,7 @@ a:hover {
     width: 42px;
     height: 42px;
     border-radius: 8px;
-    background: rgba(19, 38, 27, 0.02);
+    background: rgba(43, 38, 29, 0.02);
     border: 1px solid var(--border-subtle);
     display: flex;
     align-items: center;
@@ -970,6 +998,24 @@ a:hover {
     margin-bottom: 2rem;
 }
 
+.skills-score-label {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.skills-score-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(43, 38, 29, 0.04);
+    border-radius: 2px;
+}
+
 .skills-score-fill {
     height: 100%;
     background: var(--gradient-accent);
@@ -986,7 +1032,7 @@ a:hover {
 }
 
 .skill-tag {
-    background: rgba(19, 38, 27, 0.01);
+    background: rgba(43, 38, 29, 0.015);
     border: 1px solid var(--border-subtle);
     padding: 0.3rem 0.65rem;
     border-radius: 4px;
@@ -1009,12 +1055,14 @@ a:hover {
 }
 
 .filter-tab {
+    font-family: 'Inter', sans-serif;
     background: none;
     border: none;
     color: var(--text-secondary);
-    font-family: inherit;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     padding: 0.4rem 1rem;
     cursor: pointer;
     border-radius: var(--radius-sm);
@@ -1026,7 +1074,7 @@ a:hover {
 }
 
 .filter-tab.active {
-    background: rgba(192, 0, 0, 0.05);
+    background: rgba(163, 29, 29, 0.05);
     color: var(--accent-crimson);
 }
 
@@ -1043,12 +1091,14 @@ a:hover {
 }
 
 .project-meta-block {
+    font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.72rem;
+    font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
+    letter-spacing: 0.03em;
     margin-bottom: 1.25rem;
 }
 
@@ -1070,7 +1120,7 @@ a:hover {
 }
 
 .project-tags span {
-    background: rgba(19, 38, 27, 0.02);
+    background: rgba(43, 38, 29, 0.015);
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
     font-size: 0.75rem;
@@ -1095,9 +1145,11 @@ a:hover {
 }
 
 .credential-issuer {
-    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.03em;
     color: var(--text-muted);
     margin-bottom: 0.75rem;
 }
@@ -1125,7 +1177,7 @@ a:hover {
 }
 
 .award-card {
-    border-color: rgba(251, 191, 36, 0.25);
+    border-color: rgba(251, 191, 36, 0.35);
     background: linear-gradient(135deg, #ffffff 0%, rgba(251, 191, 36, 0.02) 100%);
 }
 
@@ -1159,17 +1211,18 @@ a:hover {
 .contact-pill-item {
     display: flex;
     flex-direction: column;
-    background: rgba(19, 38, 27, 0.01);
+    background: rgba(43, 38, 29, 0.01);
     border: 1px solid var(--border-subtle);
     padding: 0.85rem 1.25rem;
     border-radius: var(--radius-sm);
 }
 
 .pill-title {
-    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
     color: var(--text-muted);
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0.15rem;
 }
 
@@ -1190,9 +1243,11 @@ a:hover {
 }
 
 .form-input-group label {
+    font-family: 'Inter', sans-serif;
     display: block;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
     color: var(--text-secondary);
     margin-bottom: 0.4rem;
 }
@@ -1200,7 +1255,7 @@ a:hover {
 .form-input-group input, .form-input-group textarea {
     width: 100%;
     padding: 0.8rem 1.1rem;
-    background: rgba(19, 38, 27, 0.01);
+    background: rgba(43, 38, 29, 0.015);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     color: var(--text-primary);
@@ -1224,13 +1279,14 @@ a:hover {
 }
 
 .footer-container p {
-    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
     color: var(--text-muted);
     margin-bottom: 0.25rem;
 }
 
 .sub-tag {
-    font-size: 0.75rem !important;
+    font-size: 0.72rem !important;
 }
 
 /* Breakpoints */
