@@ -91,7 +91,7 @@ body {
 }
 
 /* Typography styles */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-family: 'Playfair Display', serif; /* Elegant serif headings */
     font-weight: 700;
     color: var(--text-primary);
@@ -343,7 +343,7 @@ a:hover {
 
 .hero-container {
     display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 4rem;
     align-items: center;
 }
@@ -476,7 +476,7 @@ a:hover {
 
 .profile-img-container {
     width: 100%;
-    height: 340px;
+    height: 330px;
     overflow: hidden;
     position: relative;
     border-bottom: 1px solid var(--border-subtle);
@@ -503,18 +503,51 @@ a:hover {
     font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 0.75rem;
     color: var(--text-muted);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-subtle);
 }
 
 .widget-status {
-    color: var(--accent-crimson);
+    color: var(--text-secondary);
+}
+
+.highlight-gold {
+    color: var(--accent-gold) !important;
+    font-weight: 700;
+}
+
+/* Virtual Badge Rack Styles */
+.badge-rack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.badge-chip {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.25rem 0.6rem;
+    background: rgba(43, 38, 29, 0.02);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    border-radius: 50px;
+}
+
+.gold-chip {
+    border-color: var(--accent-gold);
+    background: rgba(197, 160, 89, 0.08);
+    color: #856404;
 }
 
 .widget-metrics {
@@ -690,6 +723,316 @@ a:hover {
     letter-spacing: 0.05em;
 }
 
+/* Quick Facts Grid (Slide 1 specific) */
+.quick-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.fact-card {
+    background: rgba(43, 38, 29, 0.015);
+    border: 1px solid var(--border-subtle);
+    padding: 0.85rem 0.5rem;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-smooth);
+}
+
+.fact-card:hover {
+    border-color: var(--border-focus);
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+.fact-number {
+    display: block;
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.fact-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+}
+
+/* Team circle metric (Slide 2 specific) */
+.team-metric-block {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(43, 38, 29, 0.015);
+    border: 1px solid var(--border-subtle);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.team-metric-block:hover {
+    border-color: var(--border-focus);
+    background: #ffffff;
+}
+
+.team-chart-circle {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: var(--accent-burgundy);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(128, 0, 32, 0.2);
+}
+
+.team-label-block h4 {
+    font-size: 1.15rem;
+    margin-bottom: 0.15rem;
+}
+
+.team-label-block p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Visual Cert Node (Slide 3 specific) */
+.visual-cert-node {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.gold-frame {
+    border: 2px solid var(--accent-gold);
+    background: linear-gradient(135deg, #ffffff 0%, rgba(197, 160, 89, 0.03) 100%);
+    box-shadow: 0 8px 24px rgba(197, 160, 89, 0.08);
+}
+
+.cert-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ribbon-gold {
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+}
+
+.cert-header h4 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.cert-issuer {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.cert-body p {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.badge-verify-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--accent-gold);
+    color: #ffffff;
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-smooth);
+}
+
+.badge-verify-btn:hover {
+    background: #b08d48;
+    color: #ffffff;
+    transform: translateY(-1.5px);
+}
+
+.sub-credentials-rack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sub-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.25rem 0.65rem;
+    background: rgba(43, 38, 29, 0.015);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    border-radius: 4px;
+}
+
+/* Domain Sectors Grid (Slide 4 specific) */
+.visual-domains-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.domain-tile {
+    text-align: center;
+    padding: 1.25rem 0.4rem;
+    background: rgba(43, 38, 29, 0.015);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.domain-tile:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+}
+
+.domain-tile i {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    height: auto;
+    width: auto;
+    background: none !important;
+}
+
+.domain-tile h5 {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.domain-tile p {
+    font-size: 0.68rem;
+    line-height: 1.3;
+    color: var(--text-muted);
+}
+
+.border-retail:hover { border-color: #2563eb; }
+.border-pharma:hover { border-color: #14b8a6; }
+.border-banking:hover { border-color: #16a34a; }
+.border-transport:hover { border-color: #eab308; }
+.border-aero:hover { border-color: #7c3aed; }
+
+/* Horizontal Roadmap Diagram (Slide 5 specific) */
+.roadmap-horizontal-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(43, 38, 29, 0.015);
+    border: 1px solid var(--border-subtle);
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 2rem;
+}
+
+.roadmap-step {
+    text-align: center;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step-indicator {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.step-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1.5px solid var(--border-subtle);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+.roadmap-step h5 {
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+}
+
+.roadmap-step p {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.roadmap-connector {
+    flex-grow: 1;
+    height: 2px;
+    background: var(--border-subtle);
+    margin-top: 15px;
+}
+
+.roadmap-step.active .step-circle {
+    background: var(--accent-crimson);
+    border-color: var(--accent-crimson);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(163, 29, 29, 0.25);
+}
+
+.roadmap-step.active h5 {
+    color: var(--accent-crimson);
+}
+
+.roadmap-step.goal .step-circle {
+    background: var(--accent-burgundy);
+    border-color: var(--accent-burgundy);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(128, 0, 32, 0.3);
+}
+
+.roadmap-step.goal h5 {
+    color: var(--accent-burgundy);
+}
+
 .pitch-text {
     font-size: 1.05rem;
     line-height: 1.6;
@@ -716,58 +1059,6 @@ a:hover {
     left: 0;
     color: var(--accent-crimson);
     font-weight: 700;
-}
-
-/* Domain Sectors Grid (Slide 4 specific) */
-.domain-grid-deck {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.domain-item {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    padding: 0.75rem 1.25rem;
-    background: rgba(43, 38, 29, 0.015);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
-    transition: var(--transition-smooth);
-}
-
-.domain-item:hover {
-    background: rgba(163, 29, 29, 0.01);
-    border-color: rgba(163, 29, 29, 0.12);
-    transform: translateX(6px);
-}
-
-.domain-item i {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-}
-
-.color-retail { background: rgba(37, 99, 235, 0.08); color: #2563eb; }
-.color-pharma { background: rgba(20, 184, 166, 0.08); color: #14b8a6; }
-.color-banking { background: rgba(22, 163, 74, 0.08); color: #16a34a; }
-.color-transport { background: rgba(234, 179, 8, 0.08); color: #eab308; }
-.color-aero { background: rgba(124, 58, 237, 0.08); color: #7c3aed; }
-
-.domain-item div {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
-}
-
-.domain-item div strong {
-    color: var(--text-primary);
-    font-weight: 600;
 }
 
 /* Presenter Talking Notes Tip Box */
@@ -1320,6 +1611,10 @@ a:hover {
         gap: 2rem;
     }
     
+    .visual-domains-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -1355,6 +1650,21 @@ a:hover {
     .pitch-display-panel {
         padding: 2.5rem 1.5rem;
         min-height: 600px;
+    }
+    
+    .visual-domains-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .roadmap-horizontal-diagram {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .roadmap-connector {
+        width: 2px;
+        height: 30px;
+        margin-top: 0;
     }
     
     .pitch-slide-controls {

@@ -52,9 +52,9 @@ function initTypingCarousel() {
     if (!span) return;
     
     const roles = [
+        "Forward Deployed Engineer",
         "PMP® Project Manager",
         "CSPO® Product Owner",
-        "Forward Deployed Engineer",
         "Microsoft Tech Trainer",
         "Future CTO"
     ];
