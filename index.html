@@ -335,31 +335,80 @@
                                 <div class="pitch-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
                                 <div>
                                     <h3>My Next Goal: Becoming a CTO</h3>
-                                    <span class="pitch-subtitle-tag">Horizontal Career Roadmap</span>
+                                    <span class="pitch-subtitle-tag">GitLens Career Commit Graph</span>
                                 </div>
                             </div>
                             
-                            <!-- Visual horizontal timeline diagram -->
-                            <div class="roadmap-horizontal-diagram">
-                                <div class="roadmap-step">
-                                    <div class="step-indicator">2014-2021</div>
-                                    <div class="step-circle"><i class="fa-solid fa-code"></i></div>
-                                    <h5>Lead Developer</h5>
-                                    <p>RPA Delivery</p>
+                            <!-- GitLens-Style Commit Graph -->
+                            <div class="gitlens-graph-container">
+                                <div class="gitlens-header">
+                                    <span class="gitlens-title"><i class="fa-solid fa-code-branch"></i> GitLens Career Graph — ramjiram42/career-roadmap</span>
+                                    <span class="gitlens-branch-name"><i class="fa-solid fa-code-commit"></i> main</span>
                                 </div>
-                                <div class="roadmap-connector"></div>
-                                <div class="roadmap-step active">
-                                    <div class="step-indicator">2021-2026</div>
-                                    <div class="step-circle"><i class="fa-solid fa-medal"></i></div>
-                                    <h5>Architect & FDE</h5>
-                                    <p>Client Engineering</p>
-                                </div>
-                                <div class="roadmap-connector"></div>
-                                <div class="roadmap-step goal">
-                                    <div class="step-indicator">Next Goal</div>
-                                    <div class="step-circle"><i class="fa-solid fa-lightbulb"></i></div>
-                                    <h5>CTO</h5>
-                                    <p>Strategic Leadership</p>
+                                <div class="gitlens-tree">
+                                    <!-- Commit 1 -->
+                                    <div class="gitlens-commit-row">
+                                        <div class="gitlens-visual">
+                                            <span class="git-line line-main"></span>
+                                            <span class="git-node node-main active"></span>
+                                        </div>
+                                        <div class="gitlens-meta">
+                                            <span class="commit-hash">043d9a1</span>
+                                            <span class="commit-date">2014</span>
+                                        </div>
+                                        <div class="gitlens-detail">
+                                            <span class="commit-msg"><strong>initial commit:</strong> B.Tech EEE Graduate (JNTU)</span>
+                                            <span class="commit-author">ramjiram42</span>
+                                        </div>
+                                    </div>
+                                    <!-- Commit 2 -->
+                                    <div class="gitlens-commit-row">
+                                        <div class="gitlens-visual">
+                                            <span class="git-line line-main"></span>
+                                            <span class="git-line line-feature branch-out"></span>
+                                            <span class="git-node node-feature active"></span>
+                                        </div>
+                                        <div class="gitlens-meta">
+                                            <span class="commit-hash">d3d7163</span>
+                                            <span class="commit-date">2021</span>
+                                        </div>
+                                        <div class="gitlens-detail">
+                                            <span class="commit-msg"><strong>feat(rpa):</strong> Lead Developer Automation (TechnePlus)</span>
+                                            <span class="commit-author">ramjiram42</span>
+                                        </div>
+                                    </div>
+                                    <!-- Commit 3 -->
+                                    <div class="gitlens-commit-row">
+                                        <div class="gitlens-visual">
+                                            <span class="git-line line-main"></span>
+                                            <span class="git-line line-feature merge-in"></span>
+                                            <span class="git-node node-main active-glow"></span>
+                                        </div>
+                                        <div class="gitlens-meta">
+                                            <span class="commit-hash">ce97488</span>
+                                            <span class="commit-date">2023-2026</span>
+                                        </div>
+                                        <div class="gitlens-detail">
+                                            <span class="commit-msg"><strong>merge:</strong> Solutions Architect & Forward Deployed Engineer (Kyndryl)</span>
+                                            <span class="commit-author">ramjiram42</span>
+                                        </div>
+                                    </div>
+                                    <!-- Commit 4 (CTO Branch Checkout) -->
+                                    <div class="gitlens-commit-row pending-commit">
+                                        <div class="gitlens-visual">
+                                            <span class="git-line line-main style-dashed"></span>
+                                            <span class="git-line line-cto branch-out"></span>
+                                            <span class="git-node node-cto pulse-gold"></span>
+                                        </div>
+                                        <div class="gitlens-meta">
+                                            <span class="commit-hash">next_ref</span>
+                                            <span class="commit-date">Future Goal</span>
+                                        </div>
+                                        <div class="gitlens-detail">
+                                            <span class="commit-msg"><strong>checkout -b CTO:</strong> Strategic Tech Leadership & Corporate Governance</span>
+                                            <span class="commit-author">ramjiram42</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
