@@ -55,7 +55,8 @@ function initTypingCarousel() {
         "PMP® Project Manager",
         "CSPO® Product Owner",
         "Forward Deployed Engineer",
-        "Microsoft Tech Trainer"
+        "Microsoft Tech Trainer",
+        "Future CTO"
     ];
     
     let roleIdx = 0;
