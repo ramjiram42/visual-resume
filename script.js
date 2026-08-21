@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initPitchDeckStoryboard();
     initProjectFilter();
     initMobileDrawer();
+    initHeroParallaxTilt();
+    initAutomationCardTilt();
+    initCertCardsTilt();
 });
 
 /**
@@ -100,21 +103,6 @@ function initScrollAnimations() {
     const navLinks = document.querySelectorAll('.hertz-nav-link, .link-item');
     const timelineIndicators = document.querySelectorAll('.timeline-indicator');
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-active');
-            }
-        });
-    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
-    
-    aosItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
-        observer.observe(item);
-    });
-    
     // Inject active animation style rules
     const style = document.createElement('style');
     style.innerHTML = `
@@ -124,6 +112,27 @@ function initScrollAnimations() {
         }
     `;
     document.head.appendChild(style);
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-active');
+            }
+        });
+    }, { threshold: 0.01, rootMargin: '0px 0px -20px 0px' });
+    
+    aosItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+        
+        // Immediately reveal elements in or near initial viewport so they are never invisible on page open
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            item.classList.add('fade-in-active');
+        }
+        observer.observe(item);
+    });
     
     window.addEventListener('scroll', () => {
         let currentSec = '';
@@ -317,8 +326,9 @@ function initProjectFilter() {
  * Mobile nav toggle drawers
  */
 function initMobileDrawer() {
-    const toggle = document.querySelector('.nav-toggle');
-    const linksList = document.querySelector('.nav-links');
+    const toggle = document.querySelector('.nav-toggle-hertz') || document.querySelector('.nav-toggle');
+    const linksList = document.querySelector('.nav-links-hertz') || document.querySelector('.nav-links');
+    const userPill = document.querySelector('.nav-user-pill');
     
     if (toggle && linksList) {
         toggle.addEventListener('click', () => {
@@ -341,4 +351,79 @@ function initMobileDrawer() {
             });
         });
     }
+
+    if (userPill) {
+        userPill.addEventListener('click', () => {
+            const targetSection = document.getElementById('about');
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+}
+
+/**
+ * 3D Interactive Mouse Parallax & Tilt Effect for Hero Cards
+ */
+function initHeroParallaxTilt() {
+    const heroSection = document.querySelector('.section-hero-hertz');
+    const leftCard = document.querySelector('.hero-3d-robot-card');
+    const rightCard = document.querySelector('.hertz-floating-profile-card');
+    
+    if (!heroSection || !leftCard || !rightCard) return;
+    
+    heroSection.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = heroSection.getBoundingClientRect();
+        const xVal = (e.clientX - left - width / 2) / (width / 2);
+        const yVal = (e.clientY - top - height / 2) / (height / 2);
+        
+        leftCard.style.transform = `perspective(1000px) rotateY(${xVal * 5}deg) rotateX(${-yVal * 5}deg) translateZ(8px)`;
+        rightCard.style.transform = `perspective(1000px) rotateY(${xVal * 7}deg) rotateX(${-yVal * 7}deg) translateZ(12px)`;
+    });
+    
+    heroSection.addEventListener('mouseleave', () => {
+        leftCard.style.transform = '';
+        rightCard.style.transform = '';
+    });
+}
+
+/**
+ * 3D Mouse Parallax Tilt for AI Core Graphic Card
+ */
+function initAutomationCardTilt() {
+    const card = document.querySelector('.ai-core-graphical-card');
+    if (!card) return;
+    
+    card.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = card.getBoundingClientRect();
+        const xVal = (e.clientX - left - width / 2) / (width / 2);
+        const yVal = (e.clientY - top - height / 2) / (height / 2);
+        
+        card.style.transform = `perspective(800px) rotateY(${xVal * 8}deg) rotateX(${-yVal * 8}deg) scale(1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+    });
+}
+
+/**
+ * 3D Mouse Tilt for Certification Cards
+ */
+function initCertCardsTilt() {
+    const certCards = document.querySelectorAll('.graphical-cert-card');
+    
+    certCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = card.getBoundingClientRect();
+            const xVal = (e.clientX - left - width / 2) / (width / 2);
+            const yVal = (e.clientY - top - height / 2) / (height / 2);
+            
+            card.style.transform = `perspective(600px) rotateY(${xVal * 5}deg) rotateX(${-yVal * 5}deg) translateY(-6px) scale(1.02)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
 }
