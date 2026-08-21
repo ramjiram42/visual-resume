@@ -97,7 +97,7 @@ function initTypingCarousel() {
 function initScrollAnimations() {
     const aosItems = document.querySelectorAll('[data-aos]');
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.link-item');
+    const navLinks = document.querySelectorAll('.hertz-nav-link, .link-item');
     const timelineIndicators = document.querySelectorAll('.timeline-indicator');
     
     const observer = new IntersectionObserver((entries) => {

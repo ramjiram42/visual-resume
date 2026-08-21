@@ -1,33 +1,30 @@
-/* Executive Tech-Portfolio Design System (Multi-Section Color Theme) */
+/* Hertz Career Coaching Executive Theme System */
 
 :root {
-    /* BASE EXECUTIVE PALETTE */
-    --bg-base: #ffffff;       /* Pure White */
-    --bg-card: #ffffff;       /* Pure White Cardstock */
-    --bg-surface: #f8fafc;    /* Soft Light Slate Panel Fill */
+    /* HERTZ CAREER COACHING SIGNATURE PALETTE */
+    --hertz-amber: #f59e0b;
+    --hertz-pink: #ec4899;
+    --hertz-gradient: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
     
-    --border-subtle: #e2e8f0; /* Soft Slate Gray Outline */
-    --border-focus: #2563eb;  /* Focus Accent Border */
+    --bg-base: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-surface: #f1f5f9;
     
-    --text-primary: #0f172a;   /* Deep Slate Dark Gray */
-    --text-secondary: #475569; /* Slate Gray for Body Text */
-    --text-muted: #64748b;     /* Cool Slate Muted for Meta Labels */
+    --border-subtle: #e2e8f0;
+    --border-hertz: rgba(236, 72, 153, 0.3);
     
-    /* SECTION-SPECIFIC ACCENT PALETTES */
-    --color-hero: #2563eb;      /* Deep Royal Blue (Hero) */
-    --color-pitch: #4f46e5;     /* Electric Indigo (My Story Pitch Deck) */
-    --color-skills: #059669;    /* Emerald Green (Skills) */
-    --color-projects: #0284c7;  /* Sapphire Blue (Projects) */
-    --color-certs: #d97706;     /* Warm Amber Gold (Certifications) */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
     
-    /* Global fallback mappings */
-    --accent-blue: #2563eb;
-    --accent-navy: #1e3a8a;
-    --accent-green: #059669;
-    --accent-cyan: #0284c7;
+    --color-hero: #f59e0b;
+    --color-pitch: #ec4899;
+    --color-skills: #10b981;
+    --color-projects: #3b82f6;
+    --color-certs: #f59e0b;
     
-    --radius-sm: 8px;
-    --radius-md: 12px;
+    --radius-pill: 9999px;
+    --radius-card: 20px;
     --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     --transition-snappy: all 0.2s ease;
 }
@@ -54,32 +51,32 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Scroll Reading Line */
+/* Reading Progress Bar */
 .scroll-progress-line {
     position: fixed;
     top: 0;
     left: 0;
     width: 0%;
-    height: 3px;
-    background: linear-gradient(135deg, var(--color-hero) 0%, var(--color-pitch) 50%, var(--color-skills) 100%);
+    height: 4px;
+    background: var(--hertz-gradient);
     z-index: 1002;
     transition: width 0.1s ease;
 }
 
-/* Subtle Architectural Grid */
+/* Subtle Grid Pattern */
 .grid-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: radial-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-image: radial-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    background-size: 28px 28px;
     z-index: -2;
     pointer-events: none;
 }
 
-/* Typography styles */
+/* Typography & Gradient Accents */
 h1, h2, h3, h4, h5 {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
@@ -92,114 +89,79 @@ p {
 }
 
 a {
-    color: var(--color-hero);
+    color: var(--hertz-amber);
     text-decoration: none;
     transition: var(--transition-snappy);
 }
 
-a:hover {
-    color: var(--accent-navy);
+.gradient-text-hertz {
+    background: var(--hertz-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
 }
 
-/* Professional White Cardstock System */
-.card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    padding: 2.25rem 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    transition: var(--transition-smooth);
+.accent-pink {
+    color: var(--hertz-pink);
 }
 
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* Reusable buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-sm);
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-    border: none;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.btn-primary {
-    background: var(--color-hero);
-    color: #ffffff;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
-}
-
-.btn-primary:hover {
-    background: var(--accent-navy);
-    box-shadow: 0 6px 18px rgba(30, 58, 138, 0.3);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-primary);
-}
-
-.btn-secondary:hover {
-    background: #e2e8f0;
-    transform: translateY(-2px);
-}
-
-/* Nav container layout */
-.nav-container {
+/* ==========================================================================
+   HERTZ FLOATING PILL NAVBAR
+   ========================================================================== */
+.nav-container-hertz {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 1150px;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border-subtle);
 }
 
-.navbar {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1.1rem 2rem;
+.navbar-hertz {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.55rem 1.5rem;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 10px 30px -8px rgba(15, 23, 42, 0.08);
 }
 
-.nav-brand {
+.nav-brand-hertz {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     font-family: 'Outfit', sans-serif;
-    font-size: 1.6rem;
     font-weight: 800;
+    font-size: 1.05rem;
     color: var(--text-primary);
-    letter-spacing: -0.03em;
 }
 
-.brand-dot {
-    color: var(--color-hero);
+.brand-logo-icon {
+    width: 34px;
+    height: 34px;
+    background: var(--hertz-gradient);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
-.nav-links {
+.brand-title {
+    letter-spacing: -0.01em;
+}
+
+.nav-links-hertz {
     display: flex;
     list-style: none;
-    gap: 2rem;
-}
-
-.link-item {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-secondary);
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -250,11 +212,16 @@ a:hover {
 .section-tag {
     font-family: 'Inter', sans-serif;
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     display: inline-block;
     margin-bottom: 0.5rem;
+    color: var(--hertz-amber);
+    background: rgba(245, 158, 11, 0.08);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .section-heading {
@@ -270,177 +237,374 @@ a:hover {
 }
 
 .section-decor-line {
-    width: 50px;
-    height: 3px;
+    width: 60px;
+    height: 4px;
     margin-top: 1.25rem;
     border-radius: 50px;
+    background: var(--hertz-gradient);
+}
+
+/* Hertz Card Component Architecture */
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--hertz-gradient);
+    opacity: 0.9;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(236, 72, 153, 0.12);
+    border-color: var(--hertz-pink);
 }
 
 /* ==========================================================================
-   1. HERO SECTION SPECIFIC STYLES (Deep Royal Blue)
+   HERTZ HERO BANNER & GLASSMORPHIC NAVBAR STYLES
    ========================================================================== */
-.section-hero {
-    padding: 10rem 2rem 4.5rem;
+.section-hero-hertz {
+    position: relative;
+    padding: 8.5rem 2rem 5rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%), url('hertz_hero_banner.png') center/cover no-repeat;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.2);
+    overflow: hidden;
 }
 
-.section-hero .section-tag {
-    color: var(--color-hero);
+.hertz-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.75) 100%);
+    z-index: 1;
 }
 
-.section-hero .section-decor-line {
-    background: var(--color-hero);
-}
-
-.hero-container {
+.hertz-hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1150px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 3rem;
     align-items: center;
 }
 
-.hero-badge {
-    font-family: 'Inter', sans-serif;
+.hertz-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(37, 99, 235, 0.06);
-    border: 1px solid rgba(37, 99, 235, 0.2);
-    color: var(--color-hero);
-    padding: 0.4rem 0.9rem;
-    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--hertz-amber);
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-pill);
+    margin-bottom: 1.25rem;
+}
+
+.pulse-indicator-hertz {
+    width: 8px;
+    height: 8px;
+    background: var(--hertz-amber);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--hertz-amber);
+    animation: pulseGlow 1.8s infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.hertz-hero-headline {
+    font-size: 3.2rem;
+    line-height: 1.15;
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+}
+
+.hertz-hero-subheadline {
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.hertz-hero-subtext {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hertz-hero-actions {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+/* Hertz Floating Executive Card */
+.hertz-floating-profile-card {
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    padding: 1.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+    max-width: 440px;
+    margin-left: auto;
+}
+
+.profile-avatar-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hertz-avatar {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+    max-width: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--hertz-amber);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+}
+
+.avatar-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.profile-subtitle {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0.35rem;
+}
+
+.profile-link {
     font-size: 0.78rem;
     font-weight: 700;
+    color: var(--hertz-pink);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.profile-link:hover {
+    color: var(--hertz-amber);
+}
+
+.hertz-credentials-rack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.hertz-profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.85rem;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.stat-pill {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--hertz-amber);
+}
+
+.stat-lbl {
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1.5rem;
 }
 
-.pulse-indicator {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--color-hero);
-    box-shadow: 0 0 8px var(--color-hero);
-    animation: simplePulse 2s infinite;
+/* Hertz Inspiration Quote Section */
+.section-inspiration-hertz {
+    max-width: 1150px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
 }
 
-@keyframes simplePulse {
-    0% { opacity: 0.4; }
-    50% { opacity: 1; }
-    100% { opacity: 0.4; }
+.hertz-inspiration-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: center;
 }
 
-.hero-headline {
-    font-size: 3.5rem;
-    line-height: 1.1;
+.hertz-heading-title {
+    font-size: 2.3rem;
+    line-height: 1.2;
     margin-bottom: 0.75rem;
-    color: var(--text-primary);
 }
 
-.hero-subheadline {
-    font-size: 1.6rem;
-    font-weight: 600;
+.hertz-body-subtext {
+    font-size: 1.05rem;
     color: var(--text-secondary);
-    margin-bottom: 1.75rem;
+}
+
+.hertz-quote-card {
+    background: #fefce8;
+    border-left: 5px solid var(--hertz-amber);
+    border-radius: 0 18px 18px 0;
+    padding: 1.75rem 2rem;
+    box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.08);
+}
+
+.quote-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--hertz-pink);
+    margin-bottom: 0.75rem;
+}
+
+.quote-body {
+    font-family: 'Outfit', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+.quote-icon {
+    color: var(--hertz-amber);
+    margin-right: 0.4rem;
+}
+
+/* ==========================================================================
+   HERTZ HERO & PROFILE CARD COMPONENT ARCHITECTURE
+   ========================================================================== */
+.hertz-floating-profile-card {
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    padding: 1.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+    max-width: 440px;
+    margin-left: auto;
+}
+
+.profile-avatar-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hertz-avatar {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    max-width: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--hertz-amber);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+}
+
+.avatar-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.profile-subtitle {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 0.35rem;
+}
+
+.profile-link {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--hertz-pink);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.profile-link:hover {
+    color: var(--hertz-amber);
 }
 
 .typing-gradient {
-    color: var(--color-hero);
+    color: var(--hertz-amber);
     font-weight: 800;
 }
 
 .typing-caret {
-    color: var(--color-hero);
+    color: var(--hertz-pink);
     animation: caretBlink 0.8s infinite;
 }
 
 @keyframes caretBlink {
     50% { opacity: 0; }
-}
-
-.hero-intro {
-    font-size: 1.05rem;
-    line-height: 1.65;
-    color: var(--text-secondary);
-    margin-bottom: 2.5rem;
-    max-width: 620px;
-}
-
-.hero-meta-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-subtle);
-}
-
-.meta-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.meta-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
-}
-
-.meta-value {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.meta-value a {
-    color: var(--text-primary);
-}
-
-.meta-value a:hover {
-    color: var(--color-hero);
-}
-
-.icon-small {
-    font-size: 0.75rem;
-    margin-left: 0.2rem;
-    opacity: 0.7;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-/* Executive Profile Card */
-.profile-card {
-    padding: 0 !important;
-    overflow: hidden;
-}
-
-.profile-card:hover {
-    border-color: var(--color-hero);
-}
-
-.profile-img-container {
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-    position: relative;
-    border-bottom: 1px solid var(--border-subtle);
-    background: var(--bg-surface);
-}
-
-.profile-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 15%;
-    transition: var(--transition-smooth);
 }
 
 .profile-card:hover .profile-photo {
