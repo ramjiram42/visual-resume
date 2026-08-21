@@ -51,6 +51,38 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Strict Image Constraints & Avatar Sizing */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.user-avatar-mini {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: inline-block !important;
+}
+
+.hertz-avatar {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    min-height: 64px !important;
+    max-width: 64px !important;
+    max-height: 64px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: inline-block !important;
+}
+
 /* Reading Progress Bar */
 .scroll-progress-line {
     position: fixed;
