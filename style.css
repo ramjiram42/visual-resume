@@ -2455,3 +2455,149 @@ a {
     display: inline-flex !important;
 }
 
+/* ==========================================================================
+   PROMINENT 3D SUNGLASSES ROBOT & 3D PROJECT MANAGER HERO CARDS
+   ========================================================================== */
+.hero-3d-robot-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: rgba(15, 23, 42, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: 20px;
+    padding: 0.85rem 1.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(245, 158, 11, 0.15);
+    width: max-content;
+    margin-bottom: 0.5rem;
+}
+
+.robot-img-frame {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+    border: 2px solid var(--hertz-amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+}
+
+.hero-3d-robot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.robot-status-pill {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.pulse-dot-amber {
+    width: 8px;
+    height: 8px;
+    background: var(--hertz-amber);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--hertz-amber);
+    animation: pulseGold 1.2s infinite;
+}
+
+.robot-status-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+.robot-mode-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: var(--hertz-pink);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* 3D Project Manager Character Hero Row */
+.pm-character-hero-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pm-3d-character-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+}
+
+.pm-3d-avatar-img {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--hertz-amber);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
+}
+
+.active-task-badge {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--hertz-gradient);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 800;
+    padding: 0.15rem 0.45rem;
+    border-radius: 50px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(236, 72, 153, 0.4);
+}
+
+.pm-details-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.pm-title-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--hertz-amber);
+}
+
+/* Dynamic Floating Card Animations matching Hertz Theme */
+.float-hertz-card {
+    animation: floatHertzCard 4s ease-in-out infinite;
+}
+
+.float-hertz-card-delayed {
+    animation: floatHertzCard 4.5s ease-in-out infinite 0.75s;
+}
+
+@keyframes floatHertzCard {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35), 0 0 25px rgba(245, 158, 11, 0.15);
+    }
+    50% {
+        transform: translateY(-8px) rotate(0.4deg);
+        box-shadow: 0 28px 55px rgba(0, 0, 0, 0.45), 0 0 35px rgba(236, 72, 153, 0.25);
+    }
+}
+
