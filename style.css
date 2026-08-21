@@ -140,13 +140,16 @@ a {
 /* ==========================================================================
    HERTZ FLOATING PILL NAVBAR
    ========================================================================== */
+/* ==========================================================================
+   HERTZ FLOATING PILL NAVBAR (Pixel-Perfect 1-Line Alignment Reset)
+   ========================================================================== */
 .nav-container-hertz {
     position: fixed;
     top: 1.25rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 92%;
-    max-width: 1150px;
+    width: 94%;
+    max-width: 1200px;
     z-index: 1000;
 }
 
@@ -154,13 +157,14 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.65rem 1.75rem;
-    background: rgba(15, 23, 42, 0.75);
+    padding: 0.6rem 1.75rem;
+    background: rgba(15, 23, 42, 0.88);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: var(--radius-pill);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
 }
 
 .nav-brand-hertz {
@@ -171,39 +175,14 @@ a {
     font-weight: 800;
     font-size: 1.05rem;
     color: #ffffff;
-}
-
-.hertz-nav-link {
-    color: rgba(255, 255, 255, 0.8) !important;
-    padding: 0.35rem 0.85rem;
-    border-radius: 50px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    transition: all 0.2s ease;
-}
-
-.hertz-nav-link:hover, .hertz-nav-link.active {
-    color: #ffffff !important;
-    background: var(--hertz-gradient);
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
-}
-
-.nav-user-pill {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.3rem 0.85rem;
-    border-radius: 50px;
-    color: #ffffff;
-    font-size: 0.82rem;
-    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .brand-logo-icon {
     width: 34px;
     height: 34px;
+    min-width: 34px;
     background: var(--hertz-gradient);
     color: #ffffff;
     border-radius: 50%;
@@ -217,19 +196,67 @@ a {
 
 .brand-title {
     letter-spacing: -0.01em;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .nav-links-hertz {
     display: flex;
     list-style: none;
-    gap: 1.25rem;
+    gap: 0.85rem;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.25rem 0;
-    position: relative;
+    letter-spacing: 0.06em;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.hertz-nav-link {
+    color: rgba(255, 255, 255, 0.82) !important;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.hertz-nav-link:hover, .hertz-nav-link.active {
+    color: #ffffff !important;
+    background: var(--hertz-gradient);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+}
+
+.nav-user-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.user-name {
+    white-space: nowrap;
+}
+
+.nav-toggle-hertz {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    cursor: pointer;
 }
 
 .link-item:hover, .link-item.active {
@@ -2287,5 +2314,144 @@ a {
         transform: rotate(360deg) scale(0.9);
         opacity: 0.8;
     }
+}
+
+/* ==========================================================================
+   COOL AI ROBOT WITH SUNGLASSES & EAGER PM STATUS BANNER STYLES
+   ========================================================================== */
+.hertz-hero-left-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-robot-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    width: max-content;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    animation: floatRobot 3.2s ease-in-out infinite;
+}
+
+.cool-robot-img {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    max-width: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00f0ff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.robot-sunglasses-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+}
+
+.pulse-dot-cyan {
+    width: 8px;
+    height: 8px;
+    background: #00f0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00f0ff;
+    animation: pulseCyan 1.5s infinite;
+}
+
+@keyframes pulseCyan {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+@keyframes floatRobot {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Eagerly Waiting Project Manager Status Banner */
+.eager-pm-status-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    padding: 0.65rem 1rem;
+    border-radius: 16px;
+    margin-bottom: 1.25rem;
+    animation: eagerPulseGlow 2.5s infinite alternate;
+}
+
+.pulse-eager-dot {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    background: #f59e0b;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #f59e0b;
+    animation: pulseGold 1.2s infinite;
+}
+
+@keyframes pulseGold {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.6; }
+}
+
+.eager-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.eager-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--hertz-amber);
+    text-transform: uppercase;
+}
+
+.eager-sub {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Strict Navbar 1-Line Forced Alignment Reset */
+.nav-container-hertz {
+    width: 96% !important;
+    max-width: 1250px !important;
+}
+
+.navbar-hertz {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+}
+
+.nav-brand-hertz, .brand-title, .nav-links-hertz, .nav-links-hertz li, .hertz-nav-link, .nav-user-pill, .user-name {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+}
+
+.nav-links-hertz li {
+    display: inline-flex !important;
 }
 
