@@ -194,6 +194,8 @@ a {
 .nav-links-hertz {
     display: flex;
     list-style: none;
+    gap: 1.25rem;
+    align-items: center;
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -2035,6 +2037,109 @@ a {
     .special-card-grid, .special-card-grid.reverse-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+    }
+}
+
+/* ==========================================================================
+   RAM KING ANIMATED 3D BADGE STYLES
+   ========================================================================== */
+.graphic-3d-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+}
+
+.ram-king-badge {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 2px solid #2563eb;
+    border-radius: 50px;
+    padding: 0.5rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4), 0 0 20px rgba(37, 99, 235, 0.2);
+    z-index: 10;
+    white-space: nowrap;
+    animation: kingFloatGlow 3.5s ease-in-out infinite;
+}
+
+.pulse-dot-blue {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    background: #3b82f6;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #3b82f6;
+    animation: pulseBlueDot 1.5s infinite;
+}
+
+@keyframes pulseBlueDot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+.ram-badge-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.ram-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ram-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.pawns-label-tag {
+    position: absolute;
+    bottom: 12%;
+    left: 8%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid #cbd5e1;
+    border-radius: 50px;
+    padding: 0.35rem 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 5;
+}
+
+@keyframes kingFloatGlow {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0px);
+        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4), 0 0 20px rgba(37, 99, 235, 0.2);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-8px);
+        box-shadow: 0 18px 40px rgba(37, 99, 235, 0.6), 0 0 30px rgba(37, 99, 235, 0.4);
     }
 }
 
