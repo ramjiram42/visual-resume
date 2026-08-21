@@ -154,13 +154,13 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.55rem 1.5rem;
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    padding: 0.65rem 1.75rem;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: var(--radius-pill);
-    border: 1px solid rgba(226, 232, 240, 0.9);
-    box-shadow: 0 10px 30px -8px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.35);
 }
 
 .nav-brand-hertz {
@@ -170,7 +170,35 @@ a {
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
     font-size: 1.05rem;
-    color: var(--text-primary);
+    color: #ffffff;
+}
+
+.hertz-nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.hertz-nav-link:hover, .hertz-nav-link.active {
+    color: #ffffff !important;
+    background: var(--hertz-gradient);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+}
+
+.nav-user-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.85rem;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 600;
 }
 
 .brand-logo-icon {
@@ -2140,6 +2168,124 @@ a {
     50% {
         transform: translateX(-50%) translateY(-8px);
         box-shadow: 0 18px 40px rgba(37, 99, 235, 0.6), 0 0 30px rgba(37, 99, 235, 0.4);
+    }
+}
+
+/* ==========================================================================
+   ANIMATED PAWN CLIMBING & FALLING KEYFRAMES
+   ========================================================================== */
+.animated-pawn {
+    position: absolute;
+    z-index: 8;
+    color: #0f172a;
+    font-size: 1.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pawn-status-bubble {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 800;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 0.15rem 0.45rem;
+    border-radius: 50px;
+    margin-top: 0.15rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.pawn-status-bubble.fail-bubble {
+    background: #dc2626;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.4);
+    animation: pulseFail 1s infinite alternate;
+}
+
+@keyframes pulseFail {
+    0% { transform: scale(0.95); }
+    100% { transform: scale(1.05); }
+}
+
+/* Left Pawn Climbing and Falling Loop */
+.pawn-climb-left {
+    bottom: 18%;
+    left: 24%;
+    animation: climbAndFallLeft 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes climbAndFallLeft {
+    0% {
+        bottom: 18%;
+        left: 24%;
+        transform: rotate(0deg) scale(0.9);
+        opacity: 0.8;
+    }
+    35% {
+        bottom: 42%;
+        left: 36%;
+        transform: rotate(-15deg) scale(1);
+        opacity: 1;
+    }
+    50% {
+        bottom: 48%;
+        left: 38%;
+        transform: rotate(-75deg) scale(1.05);
+        opacity: 1;
+    }
+    75% {
+        bottom: 15%;
+        left: 18%;
+        transform: rotate(-210deg) scale(0.85);
+        opacity: 0.9;
+    }
+    90%, 100% {
+        bottom: 18%;
+        left: 24%;
+        transform: rotate(-360deg) scale(0.9);
+        opacity: 0.8;
+    }
+}
+
+/* Right Pawn Climbing and Falling Loop */
+.pawn-climb-right {
+    bottom: 22%;
+    right: 22%;
+    animation: climbAndFallRight 5.2s cubic-bezier(0.45, 0, 0.55, 1) infinite 1.8s;
+}
+
+@keyframes climbAndFallRight {
+    0% {
+        bottom: 22%;
+        right: 22%;
+        transform: rotate(0deg) scale(0.9);
+        opacity: 0.8;
+    }
+    35% {
+        bottom: 48%;
+        right: 36%;
+        transform: rotate(20deg) scale(1);
+        opacity: 1;
+    }
+    50% {
+        bottom: 54%;
+        right: 38%;
+        transform: rotate(85deg) scale(1.08);
+        opacity: 1;
+    }
+    75% {
+        bottom: 12%;
+        right: 16%;
+        transform: rotate(240deg) scale(0.8);
+        opacity: 0.85;
+    }
+    90%, 100% {
+        bottom: 22%;
+        right: 22%;
+        transform: rotate(360deg) scale(0.9);
+        opacity: 0.8;
     }
 }
 
